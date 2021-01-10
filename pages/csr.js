@@ -5,7 +5,7 @@ export default function ClientSideRendered() {
   const [state, setState] = useState([]);
 
   async function getData() {
-    const res = await fetch('https://5ffa0b9387478d0017d9a44f.mockapi.io/name');
+    const res = await fetch('<YOUR_API>'); // like https://github.com/api
     const data = await res.json();
     setState(data);
   }

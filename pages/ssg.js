@@ -14,7 +14,7 @@ export default function StaticSideGeneration({ state }) {
 // It won't be called on client-side, so you can even do
 // direct database queries.
 export async function getStaticProps() {
-  const res = await fetch('https://5ffa0b9387478d0017d9a44f.mockapi.io/name');
+  const res = await fetch('<YOUR_API>'); // like https://github.com/api
   const state = await res.json();
 
   return {

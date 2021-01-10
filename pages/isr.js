@@ -14,7 +14,7 @@ export default function IncrementalStaticGeneration({ state }) {
 // It may be called again, on a serverless function, if
 // revalidation is enabled and a new request comes in
 export async function getStaticProps() {
-  const res = await fetch('https://5ffa0b9387478d0017d9a44f.mockapi.io/name');
+  const res = await fetch('<YOUR_API>'); // like https://github.com/api
   const state = await res.json();
 
   return {
