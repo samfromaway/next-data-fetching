@@ -1,4 +1,5 @@
 // server side rendering
+import { YOUR_API_URL } from '../lib/api';
 
 export default function ServerSideRendered({ state }) {
   return (
@@ -11,7 +12,7 @@ export default function ServerSideRendered({ state }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch('<YOUR_API>'); // like https://github.com/api
+  const res = await fetch(YOUR_API_URL);
   const state = await res.json();
 
   return {

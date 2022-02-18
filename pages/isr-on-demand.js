@@ -1,7 +1,7 @@
-// static site generation
+// incremental static generation
 import { YOUR_API_URL } from '../lib/api';
 
-export default function StaticSideGeneration({ state }) {
+export default function IncrementalStaticGenerationOnDemand({ state }) {
   return (
     <>
       {state.map((e) => (
@@ -12,10 +12,10 @@ export default function StaticSideGeneration({ state }) {
 }
 
 // This function gets called at build time on server-side.
-// It won't be called on client-side, so you can even do
-// direct database queries.
+// It may be called again, on a serverless function, if
+// revalidation is enabled and a new request comes in
 export async function getStaticProps() {
-  const res = await fetch(YOUR_API_URL);
+  const res = await fetch(YOUR_API_URL); // like https://github.com/api
   const state = await res.json();
 
   return {

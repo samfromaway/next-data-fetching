@@ -1,4 +1,5 @@
 // incremental static generation
+import { YOUR_API_URL } from '../lib/api';
 
 export default function IncrementalStaticGeneration({ state }) {
   return (
@@ -14,7 +15,7 @@ export default function IncrementalStaticGeneration({ state }) {
 // It may be called again, on a serverless function, if
 // revalidation is enabled and a new request comes in
 export async function getStaticProps() {
-  const res = await fetch('<YOUR_API>'); // like https://github.com/api
+  const res = await fetch(YOUR_API_URL);
   const state = await res.json();
 
   return {
