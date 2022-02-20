@@ -13,9 +13,9 @@ export default function IncrementalStaticRegenerationOnDemand({ state }) {
 
 // This function gets called at build time on server-side.
 // It may be called again, on a serverless function, if
-// revalidation is enabled and a new request comes in
+// the api endpoint e.g. api/revalidate get's pinged.
 export async function getStaticProps() {
-  const res = await fetch(YOUR_API_URL); // like https://github.com/api
+  const res = await fetch(YOUR_API_URL);
   const state = await res.json();
 
   return {
