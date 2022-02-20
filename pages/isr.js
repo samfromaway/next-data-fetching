@@ -1,10 +1,10 @@
 // incremental static generation
 import { YOUR_API_URL } from '../lib/api';
 
-export default function IncrementalStaticRegeneration({ state }) {
+export default function IncrementalStaticRegeneration({ data }) {
   return (
     <>
-      {state.map((e) => (
+      {data.map((e) => (
         <h2 key={e.id}>{e.name}</h2>
       ))}
     </>
@@ -16,11 +16,11 @@ export default function IncrementalStaticRegeneration({ state }) {
 // revalidation is enabled and a new request comes in
 export async function getStaticProps() {
   const res = await fetch(YOUR_API_URL);
-  const state = await res.json();
+  const data = await res.json();
 
   return {
     props: {
-      state, // will be passed to the page component as props
+      data, // will be passed to the page component as props
     },
 
     // Next.js will attempt to re-generate the page:

@@ -1,10 +1,10 @@
 // static site generation
 import { YOUR_API_URL } from '../lib/api';
 
-export default function StaticSiteGeneration({ state }) {
+export default function StaticSiteGeneration({ data }) {
   return (
     <>
-      {state.map((e) => (
+      {data.map((e) => (
         <h2 key={e.id}>{e.name}</h2>
       ))}
     </>
@@ -16,11 +16,11 @@ export default function StaticSiteGeneration({ state }) {
 // direct database queries.
 export async function getStaticProps() {
   const res = await fetch(YOUR_API_URL);
-  const state = await res.json();
+  const data = await res.json();
 
   return {
     props: {
-      state, // will be passed to the page component as props
+      data, // will be passed to the page component as props
     },
   };
 }
