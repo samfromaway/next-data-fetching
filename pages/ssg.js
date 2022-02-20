@@ -1,7 +1,7 @@
 // static site generation
 import { YOUR_API_URL } from '../lib/api';
 
-export default function StaticSideGeneration({ state }) {
+export default function StaticSiteGeneration({ state }) {
   return (
     <>
       {state.map((e) => (
