@@ -1,7 +1,7 @@
 // incremental static generation
 import { YOUR_API_URL } from '../lib/api';
 
-export default function IncrementalStaticGeneration({ state }) {
+export default function IncrementalStaticRegeneration({ state }) {
   return (
     <>
       {state.map((e) => (
